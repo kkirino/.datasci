@@ -1,0 +1,9 @@
+msoffcrypto-tool
+openpyxl
+numpy
+Flask
+matplotlib
+pandas
+xlsx2csv
+black
+

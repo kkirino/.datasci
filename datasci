@@ -1,0 +1,17 @@
+#!/bin/bash
+
+CONTAINER=`docker ps | grep Datasci | wc -l`
+if [ ${CONTAINER} = 0 ]; then
+        docker start Datasci;
+fi
+
+if [[ `pwd` =~ ${HOME}/projects ]]; then
+        DIR=`pwd | sed "s@^${HOME}@@"`
+elif [[ `pwd` =~ ${HOME}/documents ]]; then
+        DIR=`pwd | sed "s@${HOME}@@"`
+else
+        DIR=""
+fi
+
+WORKDIR=/home/rstudio${DIR}
+docker exec -it --user rstudio --workdir ${WORKDIR} Datasci bash

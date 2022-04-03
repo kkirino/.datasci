@@ -1,0 +1,6 @@
+{
+  "coc.source.omni.filetypes": ["stan"],
+  "python.formatting.provider": "black",
+  "python.formatting.blackPath": "/usr/local/bin/black",
+  "coc.preferences.formatOnSaveFiletypes": ["python", "json"]
+}
