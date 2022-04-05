@@ -28,10 +28,8 @@ RUN cd ~ && \
     apt-get install -y nodejs
 
 RUN Rscript -e "install.packages(c('reticulate', \
-                                   'renv', \
                                    'readxl', \
                                    'writexl', \
-                                   'RSQLite', \
                                    'survival', \
                                    'Rmisc', \
                                    'pROC', \
@@ -56,7 +54,7 @@ RUN Rscript -e "devtools::install_github(c('stan-dev/posterior', \
 
 COPY ./requirements.txt /
 RUN cd / && \
-    pip3 install r ./requirements.txt && \
+    pip3 install -r ./requirements.txt && \
     rm ./requirements.txt
 
 USER rstudio
